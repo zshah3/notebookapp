@@ -1,0 +1,21 @@
+ <section id="add">
+  <form action="/" method="post">
+    <input type="submit" value="Add notes">
+  </form>
+</section>
+
+ <% @notes.each do |note| %>
+  <article>
+    <p> <span>Title: 
+      <%= note.title %>
+      </span>
+    </p>
+    <p>
+      <%= note.content %>
+      <span><a href="/<%= note.id %>">[edit]</a></span>
+      <span><a href="/<%= note.id %>/delete">[delete]</a></span>
+    </p>
+    <p class="meta">Created: <%= note.created_at %></p>
+    <p class="meta">Updated: <%= note.updated_at %></p>
+  </article>
+<% end %>
